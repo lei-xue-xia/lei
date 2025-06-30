@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 核心语法学习一</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .output {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+    <script>
+        // 用于收集所有输出的内容
+        let outputContent = "";
+
+        function logToPage(message) {
+            outputContent += message + "\n";
+            document.getElementById("output").textContent = outputContent;
+        }
+
+        // 主代码
+        window.onload = function() {
+            let a = 100;
+            logToPage("a = " + a);
+            
+            const api_key = 'ssssx-=-dddd';
+            logToPage("api_key = " + api_key);
+            
+            logToPage("typeof a: " + typeof a);
+            logToPage("typeof api_key: " + typeof api_key);
+            logToPage("typeof true: " + typeof true);
+            
+            let b = '1';
+            logToPage("a + b = " + (a + b));
+            logToPage("a + Number(b) = " + (a + Number(b)));
+            
+            let c = '100';
+            logToPage("a == c: " + (a == c));
+            logToPage("a === c: " + (a === c));
+            
+            // 分支语句
+            let current_time = '12:20';
+            if (current_time == '12:20') {
+                logToPage('GO GO GO！');
+            } else {
+                logToPage('毕业喽');
+            }
+            
+            // for循环
+            logToPage("for循环输出:");
+            for (let i = 1; i <= 10; i++) {
+                logToPage(i.toString());
+            }
+            
+            // while循环
+            logToPage("while循环输出:");
+            let hug = 60;
+            while (hug > 0) {
+                logToPage('继续向前……');
+                hug = hug - 10;
+            }
+            
+            // 函数
+            function intro() {
+                logToPage('你好，我是一个脚本！');
+            }
+            intro();
+            
+            function intro2(content) {
+                logToPage('以下是我介绍的内容： ' + String(content));
+            }
+            intro2('这是传入的参数');
+            
+            function intro3(content1, content2) {
+                logToPage('以下是我介绍的内容： ' + String(content1) + String(content2));
+            }
+            intro3('参数1', '参数2');
+            
+            function intro4(content) {
+                logToPage(content);
+                return content + '这是返回值';
+            }
+            let result = intro4('带返回值的函数');
+            logToPage("函数返回值: " + result);
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript 核心语法学习</h1>
+        <div class="output" id="output">正在加载输出内容...</div>
+    </div>
+</body>
+</html>
